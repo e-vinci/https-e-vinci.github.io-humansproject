@@ -4,6 +4,11 @@ import cookieMgt from '../../utils/cookieMgt';
 
 import demanderConsentement from '../../utils/consentement';
 
+import GamePage from './GamePage';
+
+// eslint-disable-next-line import/no-cycle
+import RankingPage from './RankingPage';
+
 const HomePage = () => {
 
   const main = document.querySelector('main');
@@ -26,15 +31,13 @@ const HomePage = () => {
   const playButton = document.createElement('button');
   playButton.textContent = 'Play';
   playButton.addEventListener('click', () => {
-    // Ajoutez ici la logique pour rediriger l'utilisateur vers la page de jeu
-    window.location.href = '/game';
+    GamePage();
   });
 
   const rankingButton = document.createElement('button');
   rankingButton.textContent = 'Ranking';
   rankingButton.addEventListener('click', () => {
-    // Ajoutez ici la logique pour rediriger l'utilisateur vers la page de classement
-    window.location.href = '/ranking';
+    RankingPage();
   });
 
   // Ajout des boutons au conteneur

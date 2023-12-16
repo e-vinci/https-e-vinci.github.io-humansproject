@@ -3,6 +3,9 @@
 import ecrandefondhomepage from '../../assets/Capture3.png';
 import { getRanking } from '../../utils/connection';
 import cookieMgt from '../../utils/cookieMgt';
+// eslint-disable-next-line import/no-cycle
+import HomePage from './HomePage';
+
 
 const RankingPage = async () => {
   const main = document.querySelector('main');
@@ -68,7 +71,7 @@ const RankingPage = async () => {
   backButton.classList.add('btn', 'btn-primary', 'mt-3'); // Ajout des classes Bootstrap pour styliser le bouton
   backButton.addEventListener('click', () => {
     // Ajoutez ici la logique pour rediriger l'utilisateur vers la page d'accueil
-    window.location.href = '/'; // Assurez-vous que "/" est le chemin correct de votre page d'accueil
+    HomePage (); // Assurez-vous que "/" est le chemin correct de votre page d'accueil
   });
 
   // Ajout des éléments à la page de classement
